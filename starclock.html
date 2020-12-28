@@ -1,0 +1,244 @@
+<html>
+<div class="stars"></div>
+<div class="twinkling"></div>
+<div class="clouds"></div>
+<head>
+  <script type="text/javascript">
+    window.onload = setInterval(clock,1000);
+
+    function clock()
+    {
+	  var d = new Date();
+	  
+	  var date = d.getDate();
+	  
+	  var month = d.getMonth();
+	  var montharr =["Jan","Feb","Mar","April","May","June","July","Aug","Sep","Oct","Nov","Dec"];
+	  month=montharr[month];
+	  
+	  var year = d.getFullYear();
+	  
+	  var day = d.getDay();
+	  var dayarr =["Sun","Mon","Tues","Wed","Thurs","Fri","Sat"];
+	  day=dayarr[day];
+	  
+	  var hour =d.getHours();
+      var min = d.getMinutes();
+	  var sec = d.getSeconds();
+	  hour = updateTime(hour);
+	  min = updateTime(min);
+	  sec = updateTime(sec);
+	  function updateTime(x) {
+	  if (x < 10) {
+	  return "0" + x;
+	  }
+	  else {
+	  return x;
+	  }
+}
+	  document.getElementById("date").innerHTML=day+" "+date+" "+month+" "+year;
+	  document.getElementById("time").innerHTML=hour+":"+min+":"+sec;
+    }
+	
+  </script>
+</head>
+
+<body>
+   <h1>C</h1>
+   <h1>L</h1>
+   <h1>O</h1>
+   <h1>C</h1>
+   <h1>K</h1>
+   <p id="date"></p>
+   <p id="time"></p>
+
+<a href="clock.html">
+       Day Theme 
+     </a>
+
+<audio autoplay loop>
+<source src= "nighttheme.mp3" type= "audio/mp3">
+</audio>
+	 
+ </body>
+ <style>
+ @import url('https://fonts.googleapis.com/css?family=Orbitron');
+ @import url('https://fonts.googleapis.com/css2?family=Bungee+Outline&display=swap');
+ body
+{
+	width:100%;
+    height: 100%;
+	text-align:center;
+	font-family:'Orbitron', sans-serif;
+}
+a
+{
+	z-index: 4;
+	font-size: 20px;
+	color: yellow;
+	position: relative;
+}
+h1
+{
+	margin:0px;
+	margin-top:40px;
+	margin-bottom: -280px;
+	color: yellow;
+	font-size:100px;
+	font-family:'Bungee Outline', cursive;
+	text-shadow: 3px 3px 1.5px #000;
+	position: relative;
+	z-index: 4;
+	display: inline-block;
+	animation: mover 6s linear infinite;
+}
+@keyframes mover{
+0%{
+	text-shadow: 0 0 30px rgba(0,0,0,0);
+}
+50%{
+	text-shadow: 0 0 30px rgba(0,0,0,0.3);
+	transform: translateY(30px);
+}
+100%{
+	text-shadow: 0 0 30px rgba(0,0,0,0);
+}
+}
+h1:nth-child(1)
+{
+	animation-delay: 0.5s;
+	transform: rotate(-6deg);
+}
+h1:nth-child(2)
+{
+	animation-delay: 1s;
+	transform: rotate(-12deg);
+}
+h1:nth-child(3)
+{
+	animation-delay: 1.5s;
+	transform: rotate(18deg);
+}
+h1:nth-child(4)
+{
+	animation-delay: 2s;
+	transform: rotate(12deg);
+}
+h1:nth-child(5)
+{
+	animation-delay: 2.5s;
+	transform: rotate(6deg);
+}
+#date
+{
+	margin-top:50px;
+	margin-bottom: -50px;
+	color: silver;
+	text-shadow: 3px 3px 1px #000;
+	font-size:40px;
+	padding:10px;
+	width:500px;
+	margin-left:420px;
+	position: absolute;
+	z-index: 4;
+}
+#time
+{
+	margin-top:88px;
+	font-size:100px;
+	color: white;
+	text-shadow: 3px 3px 1.5px #000;
+	padding:10px;
+	width:700px;
+	margin-left:320px;
+	position: relative;
+	z-index: 4;
+}
+a {
+z-index: 4;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+@keyframes move-twink-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+@-webkit-keyframes move-twink-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+@-moz-keyframes move-twink-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+@-ms-keyframes move-twink-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+
+@keyframes move-clouds-back {
+    from {background-position:0 0;}
+    to {background-position:10000px 0;}
+}
+@-webkit-keyframes move-clouds-back {
+    from {background-position:0 0;}
+    to {background-position:10000px 0;}
+}
+@-moz-keyframes move-clouds-back {
+    from {background-position:0 0;}
+    to {background-position:10000px 0;}
+}
+@-ms-keyframes move-clouds-back {
+    from {background-position: 0;}
+    to {background-position:10000px 0;}
+}
+
+.stars, .twinkling, .clouds {
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  width:100%;
+  height:100%;
+  display:block;
+}
+
+.stars {
+  background:#000 url(http://www.script-tutorials.com/demos/360/images/stars.png) repeat top center;
+  z-index:0;
+}
+
+.twinkling{
+  background:transparent url(http://www.script-tutorials.com/demos/360/images/twinkling.png) repeat top center;
+  z-index:1;
+
+  -moz-animation:move-twink-back 200s linear infinite;
+  -ms-animation:move-twink-back 200s linear infinite;
+  -o-animation:move-twink-back 200s linear infinite;
+  -webkit-animation:move-twink-back 200s linear infinite;
+  animation:move-twink-back 200s linear infinite;
+}
+
+.clouds{
+    background:transparent url(https://lh3.googleusercontent.com/proxy/IWEmVzEDIibnwuLe9gIfo7_XnLpkN104_mAJwEwlPDtO7qznzUyBFpi9KbKhDwV8gV4qQ5RABNEWrqdOCbnsnng6nwO-1R9duw) repeat top center;
+    z-index:3;
+	background-size: 150%;
+  -moz-animation:move-clouds-back 180s linear infinite;
+  -ms-animation:move-clouds-back 180s linear infinite;
+  -o-animation:move-clouds-back 180s linear infinite;
+  -webkit-animation:move-clouds-back 180s linear infinite;
+  animation:move-clouds-back 180s linear infinite;
+}
+
+</style>
+</html>
+
+
+
+
